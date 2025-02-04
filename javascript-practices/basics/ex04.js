@@ -25,7 +25,7 @@ var o3 = {
         age: 20
     }
 }
-console.log(o3);
+console.log(o3); 
 
 console.log("============[참고] JSON 포맷 데이터 통신(AJAX): XmlHttpRequest 객체를 사용");
 var response = "{name: '둘리', age: 10, email: 'dooly@google.com'}";
