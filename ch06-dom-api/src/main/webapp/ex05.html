@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-	<title>ex05</title>
-	<meta charset="UTF-8">
+<title>ex05</title>
+<meta charset="UTF-8">
+<script>
+var el = document.getElementById('header-3');
+console.log("dom load가 완료되기 전" + el);
+
+window.onload = function() {
+	var el = document.getElementById('header-3');
+	console.log("dom load가 완료된 후" + el);
+}
+</script>
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>
 	<h2>1. HTML Element(Tag)</h2>
 	<h3 id="header-3">Step1</h3>
-	<h3>Step3</h3>
 </body>
 </html>

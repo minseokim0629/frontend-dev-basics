@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-	<title>ex13</title>
-	<meta charset="UTF-8">
+<title>ex14</title>
+<meta charset="UTF-8">
+
+<script>
+window.addEventListener("load", function(){
+	document
+		.getElementById('form-login')
+		.addEventListener('submit', function(event){
+			event.preventDefault();
+			
+			var email = document.getElementById('input-email').value;
+			if(email === '') {
+				alert('이메일이 비어 있습니다.');
+				document.getElementById('input-email').focus();
+				return;
+			}
+			
+			var password = document.getElementById('input-password').value;
+			if(password === '') {
+				alert('비밀번호가 비어 있습니다.');
+				document.getElementById('input-password').focus();
+				return;
+			}
+			
+			//this.submit();
+			alert('ajax login 하기!');
+		});
+});
+</script>
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>
-	<h2>6. 기본(default) Event Hanlder 동작 막기 - 1. anchor</h2>	
-	<a href="" id="btn-delete">삭제</a>
+	<h2>6. 기본(default) Event Handler 동작 막기 - 2. form: DOM Event Model Level0</h2>
+	
+	<form id='form-login' method='post' action='/user/auth'>
+		<label for='input-email'>이메일</label>
+		<input type='text' name='email' id='input-email' placeholder='이메일'>
+		<br/><br/>
+
+		<label for='input-password'>비밀번호</label>
+		<input type='password' name='password' id='input-password' placeholder='비밀번호'>
+		<br/><br/>
+		
+		<input type='submit' value='로그인'>
+	</form>
 </body>
 </html>

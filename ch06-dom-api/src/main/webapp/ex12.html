@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-	<title>ex12</title>
-	<meta charset="UTF-8">
+<title>ex12</title>
+<meta charset="UTF-8">
+<script>
+/*
+기본 이벤트 동작 막기
+1. anchor : 버튼이나 메뉴로 사용할 때
+2. form : validation, ajax 방식 submit
+ */
+
+window.addEventListener("load", function() {
+	document
+		.getElementById('btn-delete')
+		.addEventListener('click', function(event){
+			event.preventDefault();
+			console.log("ajax로 지워야 합니다.");		
+		});
+})
+</script>
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>
-	<h2>5. Event 처리</h2>
-	<h3 id='header'>Click!</h3>
+	<h2>6. 기본(default) Event Handler 동작 막기 - 1. anchor</h2>
+	<a href="" id="btn-delete">삭제</a>
 </body>
 </html>

@@ -1,8 +1,19 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-	<title>ex06</title>
-	<meta charset="UTF-8">
+<title>ex06</title>
+<meta charset="UTF-8">
+<script>
+window.onload = function() {
+	setTimeout(function() {
+		var h3Element = document.createElement("h3");
+		var h3TextNode = document.createTextNode('Hello DOM');
+		
+		h3Element.append(h3TextNode);
+		document.body.appendChild(h3Element);
+	}, 2000);
+}
+</script>
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>
