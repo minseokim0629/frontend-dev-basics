@@ -2,15 +2,14 @@
     자바스크립트 함수
 */
 
-
 console.log("============[01.01] 함수를 생성(정의) 방법: literal1");
-function f1 (a, b) {
+function f1(a, b) {
     return a + b;
 }
 console.log(typeof(f1), f1(10, 20));
 
 console.log("============[01.02] 함수를 생성(정의) 방법: literal2");
-function f2 (a, b) {
+var f2 = function(a, b) {
     return a + b;
 }
 console.log(typeof(f2), f2(10, 20));
@@ -20,7 +19,7 @@ var f3 = new Function("a", "b", "return a + b");
 console.log(typeof(f3), f3(10, 20));
 
 console.log("============[01.04] 함수를 생성(정의) 방법: 익명(Anonymous) 함수");
-setTimeout(function(){
+setTimeout(function() {
     console.log('time out');
 }, 1000);
 
@@ -32,39 +31,35 @@ var s = (function(a, b) {
 console.log(s);
 
 console.log("============[02] 가변 파라미터");
-Array.prototype.forEach = function(callback) {
-    for(var i = 0; i < this.length; i++) {
-        callback()
-    }
-}
-// a, b -> parameter, 1, 2,... -> argument
 var sum = function(a, b) {
     var sum = 0;
 
-    //구현1
+    // 구현1
     // for(var i = 0; i < arguments.length; i++) {
-    //     sum += arguments[i];
+    //    sum += arguments[i];
     // }
+    //
 
     // 구현2: error
     // arguments는 Array가 아니다: 유사배열
     // console.log(arguments instanceof Array);
-    //arguments.forEach(function(e)) {
-    // sum += e;
-    //}
+    // arguments.forEach(function(e){
+    //    sum += e;
+    // });
 
-    // Array.prototype.forEach 직접 호출 + caller
-    Array.prototype.forEach.call(arguments, function(e) {
+    // Array.prototype.forEach 직접 호출 + caller(this) 바꾸기
+    Array.prototype.forEach.call(arguments, function(e){
         sum += e;
     });
+ 
     return sum;
-    //console.log(arguments);
 }
+
 console.log(sum(1));
 console.log(sum(1, 2));
-console.log(sum(1, 2, 3));
 console.log(sum(1, 2, 3, 4));
 console.log(sum(1, 2, 3, 4, 5, 6));
+
 
 console.log("============[03] caller(this) 바꾸기");
 var myObject = {
@@ -86,11 +81,12 @@ var yourObject = {
 }
 myObject.f1.apply(yourObject);
 
-// call: 호출되는 함수의 this를 첫번째 파라미터로 전달되는 객체로 바꿔서 즉시 그 함수를 호출한다. (그 함수의 파라미터도 함께 전달 가능)
+// call: 호출되는 함수의 this를 첫번째 파라미터로 전달되는 객체로 바꿔서 즉시 그 함수를 호출한다.(그 함수의 파라미터도 함께 전달 가능)
 myObject.f2.call(yourObject, "Hello");
 
 // bind: 호출되기 전의 함수의 this를 파라미터로 전달되는 객체로 바인드한다.
 var f3 = function() {
     console.log(this.v);
 }.bind(myObject);
+
 f3();

@@ -6,7 +6,8 @@ Math.pow(2, 2)
 4
 
 console.log("============[05] 세미콜론(Semicolon)");
-a = 10; b = 20;
+a = 10
+b = 20
 
 console.log("============[06] 개행(Line Break)");
 k
@@ -17,3 +18,5 @@ console.log(k)
 // error: undefined error
 // console.lo
 // g('hello world')
+
+// console.log(f(10));

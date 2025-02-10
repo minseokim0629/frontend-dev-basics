@@ -2,7 +2,7 @@ console.log("============[01.01] 배열생성: 내장객체(생성자함수) 사
 var a1 = new Array();
 console.log(typeof(a1), a1 instanceof(Array), a1.length);
 
-// 생성자 함수의 파라미터가 한 개인 경우: 배열의 크기기
+// 생성자 함수의 파라미터가 한 개인 경우: 배열의 크기
 var a2 = new Array(10);
 console.log(typeof(a2), a2 instanceof(Array), a2.length);
 

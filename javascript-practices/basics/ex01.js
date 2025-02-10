@@ -24,13 +24,13 @@ console.log("o:" + typeof(o) + ":" + (i instanceof(Object)));
 console.log("a:" + typeof(a) + ":" + (i instanceof(Array)));
 console.log("n:" + typeof(n));
 
+
 console.log("============[02.02] 객체타입: function");
 function f1() {
 
 }
 
 var f2 = function() {
-
 }
 
 var f3 = new Function();
@@ -38,6 +38,7 @@ var f3 = new Function();
 console.log("f1:" + typeof(f1) + ":" + (i instanceof(Function)));
 console.log("f2:" + typeof(f2) + ":" + (i instanceof(Function)));
 console.log("f3:" + typeof(f3) + ":" + (i instanceof(Function)));
+
 
 console.log("============[06] 기본타입과 유사객체");
 var b1 = true;

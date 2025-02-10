@@ -16,4 +16,5 @@ var f = function() {
 }
 
 console.log(global.f);
+console.log(f);
 console.log(global.parseInt);
